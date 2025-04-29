@@ -1,10 +1,12 @@
 ## Задание 1. Установка MicroK8S
 
 Установить MicroK8S на локальную машину или на удалённую виртуальную машину.
+      
       '''
       goi@guryanov:~$ microk8s version
       MicroK8s v1.32.3 revision 8148
       '''
+
 Установить dashboard.
     
    ![изображение](https://github.com/user-attachments/assets/79071db9-3940-4c95-b23d-22aad385c41f)
