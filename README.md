@@ -7,7 +7,7 @@
       '''
 Установить dashboard.
     
-   ![изображение](https://github.com/user-attachments/assets/73b0f476-d402-4fa2-b5aa-3662065cf4e4)
+   ![изображение](https://github.com/user-attachments/assets/79071db9-3940-4c95-b23d-22aad385c41f)
     
 Сгенерировать сертификат для подключения к внешнему ip-адресу.
 
