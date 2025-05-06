@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-with-app
+  name: hello-world
   labels:
-    app: myapp
+    app: myworld
   namespace: default
 spec:
   containers:
-  — name: hello-world
+  - name: hello-world
     image: gcr.io/kubernetes-e2e-test-images/echoserver:2.2
-#    imagePullPolicy: IfNotPresent
