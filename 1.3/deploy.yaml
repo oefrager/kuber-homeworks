@@ -1,19 +1,19 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deploy
+  name: nginx
   labels:
-    app: nginx
+    app: nginx-multitool
   namespace: default
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-multitool
   template:
     metadata:
       labels:
-        app: ngin
+        app: nginx-multitool
     spec:
       containers:
       - name: nginx
@@ -22,5 +22,23 @@ spec:
         - containerPort: 80
       - name: multitool
         image: wbitt/network-multitool
+        env:
+        - name: HTTP_PORT
+          value: "8801"
         ports:
-        - containerPort: 8080
+        - containerPort: 8801
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ngnix-svc
+spec:
+  selector:
+    app: nginx
+  ports:
+  - name: web
+    port: 80
+    protocol: TCP
+    targetPort: 80
