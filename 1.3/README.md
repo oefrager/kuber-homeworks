@@ -18,7 +18,7 @@
    ![изображение](https://github.com/user-attachments/assets/9f2b7d5e-540d-48cc-96bd-aa6142826e30)
 
  и после масштабирования:
-
+       
    ![изображение](https://github.com/user-attachments/assets/1cbb2dd8-580e-478a-868b-0441cb4c8dc9)
 
 4. Создать Service, который обеспечит доступ до реплик приложений из п.1.
@@ -26,6 +26,8 @@
    ![изображение](https://github.com/user-attachments/assets/04068779-4300-4784-8586-8f142b04e350)
 
 5. Создать отдельный [Pod](pod-multitool) с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
+
+   ![изображение](https://github.com/user-attachments/assets/656c72c2-ac08-41f8-b41a-14a92d80189f)
 
 ------
 
