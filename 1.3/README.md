@@ -25,7 +25,7 @@
 
    ![изображение](https://github.com/user-attachments/assets/04068779-4300-4784-8586-8f142b04e350)
 
-5. Создать отдельный [Pod](pod-multitool) с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
+5. Создать отдельный [Pod](pod-multitool.yaml) с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
 
    ![изображение](https://github.com/user-attachments/assets/656c72c2-ac08-41f8-b41a-14a92d80189f)
 
