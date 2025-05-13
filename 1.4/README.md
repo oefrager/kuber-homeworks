@@ -6,7 +6,7 @@
 
   ![изображение](https://github.com/user-attachments/assets/9c7c7fc2-991a-4eb9-822f-4b9b9ada73f5)
 
-2. Создать [Service](deploy.yaml), который обеспечит доступ внутри кластера до контейнеров приложения из п.1 по порту 9001 — nginx 80, по 9002 — multitool 8080.
+2. Создать [Service](deploy_svc.yaml), который обеспечит доступ внутри кластера до контейнеров приложения из п.1 по порту 9001 — nginx 80, по 9002 — multitool 8080.
 
   ![изображение](https://github.com/user-attachments/assets/d4ae62eb-fc8e-40cb-abb6-68a72e3c967f)
 
