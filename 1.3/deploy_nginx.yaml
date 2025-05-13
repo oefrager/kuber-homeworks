@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  labels:
-    app: nginx
   namespace: default
 spec:
   replicas: 1
@@ -20,18 +18,8 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: ngnix-svc
-spec:
-  selector:
-    app: nginx
-  ports:
-  - name: web
-    port: 80
-    protocol: TCP
-    targetPort: 80
+      initContainers:
+      - name: init-myservice
+        image: busybox
+        #command: ['sleep', '15']
+        command: ['sh', '-c', "until nslookup ngnix-svc.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for ngnix-svc; sleep 2; done"]
