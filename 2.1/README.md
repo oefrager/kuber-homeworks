@@ -27,6 +27,9 @@
 Создать DaemonSet приложения, которое может прочитать логи ноды.
 
 1. Создать [DaemonSet](daemonset.yaml) приложения, состоящего из multitool.
+
+  ![изображение](https://github.com/user-attachments/assets/c0be88f0-ea13-4b2e-ae7f-882093b88dc8)
+
 2. Обеспечить возможность чтения файла `/var/log/syslog` кластера MicroK8S.
 
   ![изображение](https://github.com/user-attachments/assets/005a788c-3771-42c4-b888-7b5dbabf30a2)
