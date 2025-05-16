@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: volume
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox-multitool
+  template:
+    metadata:
+      labels:
+        app: busybox-multitool
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:1.28
+        command: ['sh', '-c', 'while true; do echo "$(date +%H:%M:%S)" >> /etc/output/localtime.txt; sleep 5; done']
+        volumeMounts:
+        - name: vol
+          mountPath: /etc/output
+
+      - name: multitool
+        image: wbitt/network-multitool
+        volumeMounts:
+        - name: vol
+          mountPath: /etc/input
+      volumes:
+      - name: vol
+        emptyDir: {}
