@@ -20,42 +20,37 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: configmap-file
+          mountPath: /usr/share/nginx/html
+
       - name: multitool
         image: wbitt/network-multitool
-        #env:
-        #- name: HTTP_PORT
-        #  value: "8801"
         ports:
         - containerPort: 8080
+        env:
+        - name: HTTP_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: configmap-web
+              key: HTTP_PORT
 
----
-
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: configmap
-  namespace: default
-data:
-  key1: value1
-  key2: value2
-  index.data:
-    <html>
-    <body>
-      <h1>hello world!</h1>
-    </body>
-    </html>
+      volumes:
+      - name: configmap-file
+        configMap:
+          name: configmap-web
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: ngnix-svc
+  name: nginx-svc
 spec:
   selector:
-    app: nginx
+    app: nginx-multitool
   ports:
-  - name: web
+  - name: nginx
     port: 80
     protocol: TCP
     targetPort: 80

@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ngnix-svc
+  name: nginx-svc
 spec:
   selector:
     app: nginx

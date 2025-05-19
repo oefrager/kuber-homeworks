@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-web
+  namespace: default
+data:
+  HTTP_PORT: "8801"
+  index.html: |
+    <html>
+    <body>
+      <h1> Hello world!!! </h1>
+    </body>
+    </html>
