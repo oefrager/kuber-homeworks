@@ -6,14 +6,15 @@
 
   ![изображение](https://github.com/user-attachments/assets/0077f286-c1df-4755-90e8-9154fb669f8f)
 
-2. Решить возникшую проблему с помощью [ConfigMap](configmap.yaml): `HTTP_PORT: "8801"`.
+2. Решить возникшую проблему с помощью [ConfigMap](configmap.yaml): `порт 80 занят, поэтому multitool не стартует, использовать альтернативный порт: HTTP_PORT: "8801"`.
 3. Продемонстрировать, что pod стартовал и оба конейнера работают.
 
-  ![изображение](https://github.com/user-attachments/assets/5454ea23-0996-4334-991a-96d833bd6b04)
+  ![изображение](https://github.com/user-attachments/assets/49be8573-8092-4074-8589-a862fd352905)
 
 5. Сделать простую веб-страницу и подключить её к Nginx с помощью ConfigMap. Подключить Service и показать вывод curl или в браузере.
 
-  
+  ![изображение](https://github.com/user-attachments/assets/2f4b2773-9f0e-4b55-a341-55e89070ed87)
+
 6. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 ------
