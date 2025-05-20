@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx-web
+  namespace: myweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-web
+  template:
+    metadata:
+      labels:
+        app: nginx-web
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: configmap-file
+          mountPath: /usr/share/nginx/html
+        - name: secret-file
+          mountPath: /etc/config/secret
+
+      volumes:
+      - name: configmap-file
+        configMap:
+          name: configmap-web
+      - name: secret-file
+        secret:
+          secretName: secret-tls
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+spec:
+  selector:
+    app: nginx-web
+  ports:
+  - name: nginx
+    port: 80
+    protocol: TCP
+    targetPort: 80

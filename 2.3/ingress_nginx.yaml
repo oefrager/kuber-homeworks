@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-web
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: test-https.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-service
+            port:
+              number: 80
+  tls:
+    - hosts:
+      - test-https.com
+      secretName: secret-tls

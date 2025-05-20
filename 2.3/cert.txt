@@ -1,0 +1,5 @@
+#reate a new key and a self-signed certificateinsert the key and the certificat
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 10 -nodes -subj "/C=RU/ST=UR/L=Izhevsk/O=/OU=/CN=test-https.com"
+
+#insert the key and the certificate into that command
+kubectl create secret tls secret-tls --key key.pem --cert cert.pem
