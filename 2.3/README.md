@@ -23,6 +23,7 @@
 
 1. Создать [Deployment](deploy_nginx.yaml) приложения, состоящего из Nginx.
 
+  ![изображение](https://github.com/user-attachments/assets/3df67f8a-3016-41d8-9d22-03ad992d9fa6)
 
 2. Создать собственную веб-страницу и подключить её как [ConfigMap](configmap_nginx.yaml) к приложению.
 3. Выпустить самоподписной сертификат SSL. Создать [Secret](configmap_nginx.yaml) для использования сертификата.
@@ -36,7 +37,11 @@
   просиотреть можно:
       kubectl get secret secret-tls -o yaml
   ```
+  
+  ![изображение](https://github.com/user-attachments/assets/36508336-4551-47ac-a57e-eaf29a5ad108)
+
 4. Создать [Ingress](ingress_nginx.yaml) и необходимый Service, подключить к нему SSL в вид. Продемонстировать доступ к приложению по HTTPS. 
 
+  ![изображение](https://github.com/user-attachments/assets/52ed7ce2-1324-4325-8927-e30fde19853f)
 
 5. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
