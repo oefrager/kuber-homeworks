@@ -19,6 +19,6 @@ metadata:
   name: secret-tls
   namespace: myweb
 data:
-  tls.crt: aHR0cHNfc2VjcmV0X2NlcnQK #base64 encode cert
-  tls.key: aHR0cHNfc2VjcmV0X2tleQo= #base64 encode key
+  tls.crt: LS0tLS1CRUdJTiB.........
+  tls.key: LS0tLS1CRUdJTiBQUkl.....
 type: kubernetes.io/tls

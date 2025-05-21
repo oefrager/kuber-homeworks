@@ -30,16 +30,11 @@ spec:
         volumeMounts:
         - name: configmap-file
           mountPath: /usr/share/nginx/html
-        - name: secret-file
-          mountPath: /etc/config/secret
 
       volumes:
       - name: configmap-file
         configMap:
           name: configmap-web
-      - name: secret-file
-        secret:
-          secretName: secret-tls
 
 ---
 
@@ -47,6 +42,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-svc
+  namespace: myweb
 spec:
   selector:
     app: nginx-web
