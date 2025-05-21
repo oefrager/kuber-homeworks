@@ -31,7 +31,7 @@
   создаем сертификат (cert.pem) и ключ (key.pem) командой:
       openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 10 -nodes -subj "/C=RU/ST=UR/L=Izhevsk/O=/OU=/CN=test-https.com"
 
-  подключаем их в "куб" с именем secret-tls:
+  если не создавать Secret, то можно подключить их в "куб" с именем secret-tls:
       kubectl create secret tls secret-tls --key key.pem --cert cert.pem
 
   просиотреть можно:
