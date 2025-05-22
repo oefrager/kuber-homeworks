@@ -33,7 +33,9 @@
 
   ![изображение](https://github.com/user-attachments/assets/7318a22f-d1ab-413b-8d88-e4090bbc0226)
 
+
 3. Создаем [роли](role.yaml) и [привязываем](role-binding.yaml) к пользователю.
+
 
   ![изображение](https://github.com/user-attachments/assets/1fab32ea-5d21-45eb-aba9-1598615df694)
 
