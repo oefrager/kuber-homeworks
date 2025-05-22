@@ -2,11 +2,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-web
-  namespace: myweb
+  namespace: default
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: nginx
   rules:
   - host: test-https.com
     http:
@@ -17,15 +16,11 @@ spec:
           service:
             name: nginx-svc
             port:
-              number: 80
+              number: 9001
       - path: /api       #second
         pathType: Prefix
         backend:
           service:
             name: multitool-svc
             port:
-              number: 80           
-  tls:
-    - hosts:
-      - test-https.com
-      secretName: secret-tls
+              number: 9002
