@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: volume
-  namespace: default
+  namespace: myvolume
 spec:
   replicas: 1
   selector:
@@ -16,6 +16,13 @@ spec:
       containers:
       - name: busybox
         image: busybox:1.28
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
         command: ['sh', '-c', 'while true; do echo "$(date +%H:%M:%S)" >> /etc/output/localtime.txt; sleep 5; done']
         volumeMounts:
         - name: vol
@@ -23,9 +30,18 @@ spec:
 
       - name: multitool
         image: wbitt/network-multitool
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
         volumeMounts:
         - name: vol
           mountPath: /etc/input
+
       volumes:
       - name: vol
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName: pvc-vol
