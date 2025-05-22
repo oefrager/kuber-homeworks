@@ -25,7 +25,7 @@
 5. [Helm](2.5/README.md).
 
 ### Блок «Администрирование Kubernetes»
-<!---
+
 1. [Компоненты Kubernetes](3.1/README.md).
 
 2. [Установка Kubernetes](3.2/README.md).
@@ -35,4 +35,3 @@
 4. [Обновление приложений](3.4/README.md).
 
 5. [Troubleshooting](3.5/README.md).
---->
