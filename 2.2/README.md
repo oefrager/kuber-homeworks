@@ -36,7 +36,7 @@
 
   ![изображение](https://github.com/user-attachments/assets/529ee61b-5de6-4572-a4fe-cda6b99f67e1)
 
-2. Создать [Deployment](deploy_vol_class.yaml) приложения состоящего из multitool, и подключить к нему PV, созданный автоматически на сервере NFS.
+2. Создать [Deployment](deploy_multi.yaml) приложения состоящего из multitool, и подключить к нему PV, созданный автоматически на сервере NFS.
 
   ![изображение](https://github.com/user-attachments/assets/355d7fa3-77eb-42e6-9580-ad783548c41b)
 
