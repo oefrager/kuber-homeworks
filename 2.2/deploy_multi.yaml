@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: volume
+  namespace: myvolume
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox-multitool
+  template:
+    metadata:
+      labels:
+        app: busybox-multitool
+    spec:
+      containers:
+      - name: multitool
+        image: wbitt/network-multitool
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: "1"
+          requests:
+            memory: 256Mi
+            cpu: "0.2"
+        volumeMounts:
+        - name: vol
+          mountPath: /etc/input
+
+      volumes:
+      - name: vol
+        persistentVolumeClaim:
+          claimName: pvc-vol
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-vol
+  namespace: myvolume
+spec:
+  storageClassName: "microk8s-hostpath"
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
