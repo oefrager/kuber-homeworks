@@ -36,7 +36,13 @@
   ```
 
 2. В качестве CRI — containerd.
+
+  ![изображение](https://github.com/user-attachments/assets/d81fd605-9628-45fd-b5a5-8983b3ad9cef)
+
 3. Запуск etcd производить на мастере.
+
+  ![изображение](https://github.com/user-attachments/assets/afb638f2-a18b-4744-9bcb-d6f38dff8f5c)
+
 4. Способ установки выбрать самостоятельно.
 
 ## Дополнительные задания (со звёздочкой)
